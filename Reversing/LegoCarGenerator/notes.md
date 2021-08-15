@@ -64,7 +64,7 @@ Uses RDI Register as string input
 Uses further Registers (RSI, RDX, ...) as format specifiers
 !Attention! zero all AL-Registers (lower 8 Bit of EAX,RAX) to prevent crash
 
-## malloc [^2]
+## malloc <sup>[2](#malloc)</sup>
 
 Uses RDI Register as input of number of BYTES to allocate from memory
 Returns a pointer to the allocated bytes in RAX 
@@ -72,5 +72,6 @@ Returns a pointer to the allocated bytes in RAX
 
 # Sources
 <a name="printf">1</a>: [printf-Source](https://www.cs.uaf.edu/2015/fall/cs301/lecture/10_07_printf.html)
+
 <a name="malloc">2</a>: [malloc-Source](https://www.cs.uaf.edu/2010/fall/cs301/lecture/10_04_malloc.html)
 
