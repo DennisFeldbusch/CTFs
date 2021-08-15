@@ -52,7 +52,7 @@ JMP 0x12E7
 
 
 # C-Functions
-## printf [^1] 
+## printf <sup>[1](#printf)</sup> 
 | Format | Description                        |
 |--------|------------------------------------|
 | %d     | Decimal output                     |
@@ -70,6 +70,7 @@ Uses RDI Register as input of number of BYTES to allocate from memory
 Returns a pointer to the allocated bytes in RAX 
 (to free the allocated memory move the pointer to RDI and CALL free )
 
-[^1]: [printf-Source](https://www.cs.uaf.edu/2015/fall/cs301/lecture/10_07_printf.html)
-[^2]: [malloc-Source](https://www.cs.uaf.edu/2010/fall/cs301/lecture/10_04_malloc.html)
+# Sources
+<a name="printf">1</a>: [printf-Source](https://www.cs.uaf.edu/2015/fall/cs301/lecture/10_07_printf.html)
+<a name="malloc">2</a>: [malloc-Source](https://www.cs.uaf.edu/2010/fall/cs301/lecture/10_04_malloc.html)
 
