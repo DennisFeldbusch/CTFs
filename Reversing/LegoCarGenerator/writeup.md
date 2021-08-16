@@ -56,9 +56,13 @@ int main() {
 ```
 2. x86 Assembly instructions<sup>[2](#instructionreference)</sup>
 
+3. Debugging assembly with GDB and GEF <sup>[3](#gdbgef)</sup>
 
 # Sources
 
 <a name="registers">1</a>: [x86 Registers](https://stackoverflow.com/questions/25455447/x86-64-registers-rax-eax-ax-al-overwriting-full-register-contents) 
 
 <a name="instructionreference">2</a>: [x86 instruction reference](https://www.felixcloutier.com/x86/index.html) 
+
+<a name="gdbgef">3</a>: [GDB enhanced features](https://github.com/hugsy/gef) 
+
