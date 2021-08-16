@@ -21,7 +21,7 @@ EDX = 2
 CALL fseek
 RDI = R12
 CALL ftell 
-R13 = RAX
+R13 = RAX -> R13 = Last Value (maybe 0x00)
 RDI = R12
 CALL rewind
 RDI = R13
@@ -60,6 +60,56 @@ JMP 0x12D0
 :0x12D0
 EBX + 1
 EBX AND 3 => 
+EAX = EAX (Shifted by 0x18)
+Basepointer+R15 XOR AL (Lower 8 Bits of EAX)
+Basepointer + 1
+CMP R13, Basepointer (R13 - Basepointer)
+IF R13 = Basepointer (== 0 ) JMP 0x12F6
+
+:12F6
+RDI = R14+0x10
+RSI = addrof(aWb) => "wb"
+CALL fopen
+IF RAX = 0 JMP 0x13B3
+IF NOT 
+R12 = RAX
+ESI = 1
+RDI = R15
+RDX = R13
+RCX = RAX
+CALL fwrite
+RDI = R12
+CALL fclose
+EBX = 0 
+
+:0x132F
+RDI = R15
+CALL free
+
+:0x1337
+RAX = fs+0x28 Offset
+CMP RAX, Stackpointer+0x48+-0x38
+IF != 0 JMP 0x13EE
+IF == 0
+EAX = EBX
+Stackpointer + 0x18
+POP RBX
+POP R12
+POP R13
+POP R14
+POP R15
+POP Basepointer
+Return
+
+:0x13EE
+CALL STACK_CHK_FAIL
+ENDE
+
+
+11100001100001001010001110110111
+
+
+
 ```
 
 
@@ -103,3 +153,4 @@ Returns a pointer to the allocated bytes in ´RAX´
 
 <a name="malloc">2</a>: [malloc-Source](https://www.cs.uaf.edu/2010/fall/cs301/lecture/10_04_malloc.html)
 
+<a name="assembly instructions">99</a>: [assembly instructions](https://www.felixcloutier.com/x86/)
