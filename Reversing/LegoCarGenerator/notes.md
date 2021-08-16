@@ -1,5 +1,5 @@
 # ASSEMBLY ANALYSE
-´´´
+```
 Stackpointer = Stackpointer - 0x18
 R14 = RSI (Quelle für Stringoperationen)
 RAX = FS+0x28(Offset)
@@ -60,7 +60,8 @@ JMP 0x12D0
 :0x12D0
 EBX + 1
 EBX AND 3 => 
-´´´
+```
+
 
 # C-Functions
 ## printf <sup>[1](#printf)</sup> 
