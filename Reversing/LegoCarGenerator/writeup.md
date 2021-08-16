@@ -11,7 +11,7 @@ secret => b6 4a 9e 78 de 86
 start  => C4 2B FD 0C B8 FD
 ```
 
-* Because the start is only 4 Bytes (see. EAX vs. RAX<sup>[2](#EAX vs RAX)</sup>) I only need the first four Bytes
+* Because the start is only 4 Bytes (see. EAX vs. RAX<sup>[2](#registers)</sup>) I only need the first four Bytes
 
 * with these information I created a little c-tool which give me the flag
 ```c
@@ -27,7 +27,7 @@ int main() {
     for (int i = 0; i < 35; i++) {
         if (BP == 0) {
             BP = 4;
-            start = start * 0x17433A5B;
+            start *= 0x17433A5B;
             start += 0x0B7E184A3;
 
         }
@@ -46,7 +46,7 @@ int main() {
 ```
 
 # Lessons learned
-1. In x86 are multiple types to specify the size of a register<sup>[2](#EAX vs RAX)</sup>:
+1. In x86 are multiple types to specify the size of a register<sup>[2](#registers)</sup>:
 ```
   ================ rax (64 bits)
           ======== eax (32 bits)
@@ -59,5 +59,5 @@ int main() {
 
 # Sources
 
-<a name="EAX vs RAX">2</a>: 
+<a name="registers">2</a>: [x86 Registers](https://stackoverflow.com/questions/25455447/x86-64-registers-rax-eax-ax-al-overwriting-full-register-contents) 
 
