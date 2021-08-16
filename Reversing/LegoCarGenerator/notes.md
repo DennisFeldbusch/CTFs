@@ -1,5 +1,5 @@
 # ASSEMBLY ANALYSE
-
+´´´
 Stackpointer = Stackpointer - 0x18
 R14 = RSI (Quelle für Stringoperationen)
 RAX = FS+0x28(Offset)
@@ -50,6 +50,17 @@ R12 = addrof(RSP+0x48+-0x40)
 EBX = 0 
 JMP 0x12E7
 
+RBX AND RBX => CHECK IF RBX = 0
+IF != 0 JMP 0x12D0
+
+RDI = R12
+CALL rngNext32
+JMP 0x12D0
+
+:0x12D0
+EBX + 1
+EBX AND 3 => 
+´´´
 
 # C-Functions
 ## printf <sup>[1](#printf)</sup> 
@@ -60,15 +71,31 @@ JMP 0x12E7
 | %08d   | Include leading zeros              |
 | %X     | Hex output                         |
 
-Uses RDI Register as string input
-Uses further Registers (RSI, RDX, ...) as format specifiers
-!Attention! zero all AL-Registers (lower 8 Bit of EAX,RAX) to prevent crash
+Uses ´RDI´ Register as string input
+Uses further Registers (´RSI´, ´RDX´, ...) as format specifiers
+!Attention! zero all AL-Registers (lower 8 Bit of ´EAX´,´RAX´) to prevent crash
 
 ## malloc <sup>[2](#malloc)</sup>
 
-Uses RDI Register as input of number of BYTES to allocate from memory
-Returns a pointer to the allocated bytes in RAX 
-(to free the allocated memory move the pointer to RDI and CALL free )
+Uses ´RDI´ Register as input of number of BYTES to allocate from memory
+Returns a pointer to the allocated bytes in ´RAX´ 
+(to free the allocated memory move the pointer to ´RDI´ and CALL free )
+
+## free <sup>[3](#free)</sup>
+
+## fread
+
+## fclose
+
+## rewind
+
+## ftell
+
+## fseek 
+
+## fopen
+
+## fwrite
 
 # Sources
 <a name="printf">1</a>: [printf-Source](https://www.cs.uaf.edu/2015/fall/cs301/lecture/10_07_printf.html)
