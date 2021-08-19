@@ -4,7 +4,7 @@
 
 # General
 
-* Given a binary([encrypter](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/LegoCarGenerator/encrypter)) and a hexfile([secret](https://github.com/DennisFeldb    usch/CTFs/blob/main/Reversing/LegoCarGenerator/secret))
+* Given a binary([encrypter](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/LegoCarGenerator/encrypter)) and a hexfile([secret](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/LegoCarGenerator/secret))
 * By inspecting the binary with `objdump -d encrypter > encrypter.s` and inspecting with [IDA](https://hex-rays.com/ida-free/) you can see at address 0x12BD the current char is XORed with the appropriate byte of the "hash"
 * every 4th time (see. address 0x12D2 -> modulo) the "hash" is newly calculated which is within the rngNext32 function
 * because of the given start of the flag `ractf{` and the given secret I calculated the then called start by XORing them:
