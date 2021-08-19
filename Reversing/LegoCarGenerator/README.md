@@ -1,3 +1,7 @@
+# Lego Car Generator (350 pts)
+
+* I encypted the flag with this [program](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/LegoCarGenerator/encrypter) into [secret](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/LegoCarGenerator/secret). But then I accidentally lost the original file! Can you help me recover the flag please?
+
 # General
 
 * Given a binary(encrypter) and a hexfile(secret)
