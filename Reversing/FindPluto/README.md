@@ -38,6 +38,21 @@
 [0x00000b52]> VV
 ```
 
+* besides the main there are two functions which are interesting: 
+    * fcn.000008aa which is the negative result 
+    * fcn.000008d0 which is the positive result
+
+* with the goal in mind to reach the fcn.000008d0 function we have to pass all chacks to get to the far end where fcn.000008d0 is called
+
+## Checks
+
+1. call strlen
+    * the length of the input is compared with `0x1e` -> 30 => so the input should have a length of 30 characters excluding the null byte
+    
+
+
+
+
 
 
 

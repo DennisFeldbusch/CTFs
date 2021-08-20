@@ -1,3 +1,20 @@
+# Register purposes
+
+| Register | Purpose                                | Saved across calls |
+|----------|----------------------------------------|--------------------|
+| RAX      | temp register; return value            | no                 |
+| RBX      | callee-saved                           | yes                |
+| RCX      | used to pass 4th argument to functions | no                 |
+| RDX      | used to pass 3rd argument to functions | no                 |
+| RSP      | stack pointer                          | yes                |
+| RBP      | callee-saved; base pointer             | yes                |
+| RSI      | used to pass 2nd argument to functions | no                 |
+| RDI      | used to pass 1st argument to functions | no                 |
+| R8       | used to pass 5th argument to functions | no                 |
+| R9       | used to pass 6th argument to functions | no                 |
+| R10-11   | temporary                              | no                 |
+| R12-15   | callee-saved registers                 | yes                |
+
 # C-Functions
 ## printf <sup>[1](#printf)</sup> 
 | Format | Description                        |
