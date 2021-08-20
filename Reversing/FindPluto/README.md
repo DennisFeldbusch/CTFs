@@ -1,6 +1,6 @@
 # find_plut0 (100 pts)
 
-* Find pluto, nad get your reward!! [chall](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/FindPluto/chall)
+* Find pluto, and get your reward!! [chall](https://github.com/DennisFeldbusch/CTFs/blob/main/Reversing/FindPluto/chall)
 
 # General
 
